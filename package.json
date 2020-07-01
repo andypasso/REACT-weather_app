@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "convert-units": "^2.3.4",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-weathericons": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,10 +25,13 @@
   },
   "quokka": {
     "babel": {
-      "presets": ["react-app"]
+      "presets": [
+        "react-app"
+      ]
     },
-    "plugins": ["jsdom-quokka-plugin"]
-
+    "plugins": [
+      "jsdom-quokka-plugin"
+    ]
   },
   "browserslist": {
     "production": [
