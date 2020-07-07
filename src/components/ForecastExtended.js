@@ -5,20 +5,7 @@ import ForecastItem from './ForecastItem';
 import forecastExtended from '../services/transformForecast'
 import transformForecast from '../services/transformForecast';
 
-// const days = [
-//     'Lunes',
-//     'Martes',
-//     'Miercoles',
-//     'Jueves',
-//     'Viernes'
-// ];
 
-// const data = {
-//     temperature: 10,
-//     humidity: 10,
-//     weatherState: 'normal',
-//     wind: 'normal',
-// };
 const api = {
     key: "4c4e39e4d19df4b03f3b39a7f44a5e0e",
     base: "https://api.openweathermap.org/data/2.5/forecast?q="
@@ -43,6 +30,7 @@ class ForecastExtended extends Component {
             weather_data => {
                 console.log(weather_data);
                 const forecastData = transformForecast(weather_data);
+                console.log(forecastData)
                 this.setState( { forecastData } )
             }
         )
@@ -50,9 +38,14 @@ class ForecastExtended extends Component {
     }
     
 
-    renderForecastItemDays() {
-        return 'Render Items'
-        // return days.map(day => <ForecastItem weekDay={day} hour='10' data={data}></ForecastItem>)
+    renderForecastItemDays(forecastData) {
+        return forecastData.map( forecast => (
+            <ForecastItem 
+                key={`${forecast.weekDay}${forecast.hour}`}
+                weekDay={forecast.weekDay}
+                hour={forecast.hour}
+                data={forecast.data}>
+            </ForecastItem>))
     }
 
     renderProgress() {
@@ -66,10 +59,10 @@ class ForecastExtended extends Component {
 
         return (
         <div>
-            <h2 className='forecastTitle'>Pronostico extendido para {city} </h2>
+            <h2 className='forecastTitle'>Pronóstico extendido para {city} </h2>
 
             {forecastData ?
-            this.renderForecastItemDays() :
+            this.renderForecastItemDays(forecastData) :
             this.renderProgress() }
         </div>
         )

@@ -47,7 +47,7 @@ class App extends Component{
           onSelectedLocation={this.handleSelectedLocation}/>
           </Col>
 
-          <Col xs={12} md={6}>
+          <Col s={12} md={6}>
             <Paper elevation={4}>
               <div className='details'>
                 {

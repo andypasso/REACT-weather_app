@@ -21,10 +21,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
 }
 
-.details {
-    background-color: #999;
-    height: 100vh;
-    width: 100%;
-}
+.weatherLocationCont:hover {
+    background-color: #ffff99;
+  }
