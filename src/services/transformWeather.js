@@ -11,7 +11,7 @@ import {
 } from '../constants/weathers';
 
 const getTemp = k => {
-    return Number(convert(k).from('K').to('C').toFixed(2));
+    return Number(convert(k).from('K').to('C').toFixed(0));
 }
 
 
