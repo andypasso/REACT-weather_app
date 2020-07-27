@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 import ForecastItem from './ForecastItem';
-import forecastExtended from '../services/transformForecast'
 import transformForecast from '../services/transformForecast';
 
 
